@@ -15,7 +15,7 @@ sudo mv wp-config-sample.php wp-config.php
 sudo sed -i 's/database_name_here/wordpress/g' wp-config.php
 sudo sed -i 's/username_here/wordpress/g' wp-config.php
 sudo sed -i 's/password_here/wordpress/g' wp-config.php
-sed -i "s/localhost/$IP_Privado_do_BD/g" /var/www/html/wordpress/wp-config.php
+sed -i "s/localhost/$IP_PRIVATE_BD/g" /var/www/html/wordpress/wp-config.php
 sudo systemctl restart apache2.service
 sudo rm -rf /var/www/html/index.html
 sudo sed -i '/warn/a <Directory /var/www/html/>\n   AllowOverride All\n</Directory>' /etc/apache2/sites-available/000-default.conf
