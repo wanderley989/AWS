@@ -26,7 +26,7 @@ sed -i "s/localhost/$IP_PRIVATE_BD/g" wp-config.php
 
 systemctl restart apache2.service
 
-#rm -rf /var/www/html/index.html
+rm -rf /var/www/html/index.html
 
 sed -i '/warn/a <Directory /var/www/html/>\n   AllowOverride All\n</Directory>' /etc/apache2/sites-available/000-default.conf
 
