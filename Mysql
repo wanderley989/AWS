@@ -1,8 +1,13 @@
 
 apt-get install mysql-server -y 
 debconf-set-selections <<< 'mysql-server mysql-server/ password wordpress' 
-sudo sed -i "/bind-address/d" /etc/mysql/mysql.conf.d/mysqld.cnf
+
+#abilitando o BD para escutar todos o ips podese colocar o ip do serv web ou so comenta
+
+sed -i "/bind-address/d" /etc/mysql/mysql.conf.d/mysqld.cnf
 systemctl restart mysql.service
+
+#pode colocar no lugar do "%" o ip do servidor web
 
 mysql <<EOF
 CREATE DATABASE wordpress;
